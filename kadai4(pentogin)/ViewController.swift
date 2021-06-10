@@ -9,29 +9,23 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet  private weak var label: UILabel!
+    @IBOutlet private weak var label: UILabel!
     
     //labelにInt型の数値０を入れる
-    var countLabel = 0
+    private var count = 0
     
     //ボタンを押すと＋１増えていく
     @IBAction func countButton(_ sender: Any) {
+        count += 1
         
-    countLabel += 1
-        
-    //countLabelがInt型になっているのでString型にして、labelに表示する
-        label.text = String(countLabel)
+        //countLabelがInt型になっているのでString型にして、labelに表示する
+        label.text = String(count)
     }
     
     //このボタンを押すと０に戻る
     @IBAction func clearButton(_ sender: Any) {
+        count = 0
         
-    countLabel = 0
-        
-        label.text = String(countLabel)
-     
-    
-        
+        label.text = String(count)
     }
 }
-
